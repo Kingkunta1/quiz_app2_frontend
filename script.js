@@ -16,10 +16,18 @@ quesButton.addEventListener("click",function(e){
   .then(questions => {
 
     const quesContainer = document.querySelector("#question-container")
-
-
-    
     // console.log(questions)
+
+    questions.forEach(function(question) {
+      // iterating throughout the array of objects by using forEach which takes in a callback function and the question as the single objects.)
+      const newQuesElement = document.createElement('p')
+      // setting a new element = to <p>
+      newQuesElement.innerText = question.name
+      // setting the inner text on the new Element to an item's name from the array
+      quesContainer.appendChild(newQuesElement)
+      // adding the new element to the existing <div>
+    })
+
   })
   })
 
